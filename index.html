@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visrodeck Studio</title>
+    <style>
+      body { background: #0a0a0b; margin: 0; }
+      #splash {
+        position: fixed; inset: 0; z-index: 9999;
+        background: linear-gradient(160deg, #0b111b 0%, #0d1520 50%, #0a0e14 100%);
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        color: #8b949e;
+        transition: opacity 0.35s ease-out;
+      }
+      #splash.hide { opacity: 0; pointer-events: none; }
+      #splash .logo { font-size: 1.25rem; letter-spacing: 0.35em; color: #58a6ff; margin-bottom: 0.5rem; font-weight: 600; }
+      #splash .tag { font-size: 0.7rem; letter-spacing: 0.2em; color: #484f58; margin-bottom: 2rem; }
+      #splash .bar { width: 120px; height: 3px; background: #21262d; border-radius: 2px; overflow: hidden; }
+      #splash .bar span { display: block; height: 100%; background: linear-gradient(90deg, #58a6ff, #79c0ff); border-radius: 2px; animation: splash-load 0.9s ease-in-out infinite; }
+      @keyframes splash-load { 0% { width: 20%; margin-left: 0; } 50% { width: 60%; margin-left: 20%; } 100% { width: 20%; margin-left: 80%; } }
+    </style>
+  </head>
+  <body>
+    <div id="splash">
+      <div class="logo">VISRODECK</div>
+      <div class="tag">STUDIO</div>
+      <div class="bar"><span></span></div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
